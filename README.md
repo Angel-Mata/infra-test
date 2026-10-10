@@ -1,14 +1,17 @@
 Your task is to deploy a sample API with potentially several replicas and its database using
 persistent storage. Ideally you will run the AWS Elastic Kubernetes Service as orchestrator of
 the deployment while adhering to the best practices in the technology.
+
 You must allow these resources to communicate with each other and that the API is accessible
 from the outside, while the database is not. To define, install and manage your applications,
 ideally you will use Helm. Official Helm Charts are allowed to achieve the ingress controller,
 database or any other component.
+
 To showcase your ability to work with modern systems you cannot generate these resources
 manually, instead you should be focusing on IaC technologies like Terraform.
 Your deployment should be driven by an informal user story that you will create, and which
 should be included in your presentation.
+
 Requirements
 
 ● Terraform code:
