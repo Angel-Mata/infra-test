@@ -1,0 +1,13 @@
+apiVersion: v2
+name: catalog-api
+description: Helm chart para la API de Catálogo y su Base de Datos
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+
+dependencies:
+  - name: postgresql
+    version: "12.8.3" # Versión estable del chart oficial de Bitnami
+    repository: "https://charts.bitnami.com/bitnami"
+    condition: postgresql.enabled
+    

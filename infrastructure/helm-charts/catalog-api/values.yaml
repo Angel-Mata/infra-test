@@ -1,0 +1,32 @@
+replicaCount: 2
+
+image:
+  repository: mi-registro/catalog-api
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+service:
+  type: ClusterIP # Interno, el Ingress es quien expone
+  port: 80
+
+ingress:
+  enabled: true
+  className: "nginx"
+  hosts:
+    - host: api.midominio.com
+      paths:
+        - path: /
+          pathType: Prefix
+
+# Configuración que se inyecta al chart oficial de PostgreSQL (Sub-chart)
+postgresql:
+  enabled: true
+  auth:
+    username: catalog_user
+    password: catalog_password
+    database: catalog_db
+  primary:
+    persistence:
+      enabled: true
+      size: 8Gi # Almacenamiento persistente usando EBS
+      
