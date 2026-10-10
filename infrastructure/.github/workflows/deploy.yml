@@ -1,0 +1,27 @@
+name: Build and Push
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'app/**'
+      - 'helm-charts/**'
+
+jobs:
+  build-and-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v3
+
+      - name: Instalar Helm
+        uses: azure/setup-helm@v3
+
+      - name: Lint Helm Chart
+        run: |
+          helm dependency update ./helm-charts/catalog-api
+          helm lint ./helm-charts/catalog-api
+
+      - name: Construir imagen de Docker
+        run: docker build -t catalog-api:${{ github.sha }} ./app
