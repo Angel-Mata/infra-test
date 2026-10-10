@@ -12,22 +12,36 @@ should be included in your presentation.
 Requirements
 
 ● Terraform code:
+
 ○ Create the resources necessary to deploy this infrastructure using a repository
 structure that considers potential multiple environments and an organizational
 approach.
+
 ● Helm charts:
+
 ○ Charts describing all cluster resource sets where applicable. Kustomize is an
 open option here.
+
 ● Dockerfiles:
+
 ○ Sample Dockerfiles images implemented.
+
 ● User story:
+
 ○ A simple epic listing the tasks with which you would organize this
 deployment.
+
 ○ The resources can remain on standby (git repository).
+
 ○ A bonus (not requirement) would be:
+
 ■ Running this infrastructure in AWS
+
 ■ Implementing a CI/CD system to automate deployment
+
 ■ GitOps
+
 ■ Any additional component that improves the complexity of this
+
 exercise: DevOps/SRE practices, Monitoring, Log Management,
 Alerts, etc.
