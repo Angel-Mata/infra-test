@@ -10,6 +10,7 @@ manually, instead you should be focusing on IaC technologies like Terraform.
 Your deployment should be driven by an informal user story that you will create, and which
 should be included in your presentation.
 Requirements
+
 ● Terraform code:
 ○ Create the resources necessary to deploy this infrastructure using a repository
 structure that considers potential multiple environments and an organizational
